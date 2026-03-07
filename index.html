@@ -1,11 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>AI Side Hustle Generator</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Side Hustle Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 50px;
+    }
+    h1 {
+      color: #333;
+    }
+    input, button {
+      padding: 10px;
+      margin: 5px 0;
+      font-size: 16px;
+    }
+    #idea {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #0066cc;
+    }
+  </style>
 </head>
-
 <body>
-<h1>AI Side Hustle Generator</h1>
-<p>Your free tool is coming soon!</p>
+
+  <h1>AI Side Hustle Generator</h1>
+  <p>Type a skill or interest to get a side hustle idea:</p>
+  <input type="text" id="skill" placeholder="e.g., fitness, writing, coding">
+  <button onclick="generateIdea()">Generate Idea</button>
+
+  <div id="idea"></div>
+
+  <script>
+    const ideas = [
+      "Start a coaching service for SKILL",
+      "Create an online course about SKILL",
+      "Write an eBook about SKILL",
+      "Build a YouTube channel teaching SKILL",
+      "Offer consulting services in SKILL"
+    ];
+
+    function generateIdea() {
+      const skill = document.getElementById("skill").value.trim();
+      if (!skill) {
+        document.getElementById("idea").innerText = "Please enter a skill first!";
+        return;
+      }
+      const randomIndex = Math.floor(Math.random() * ideas.length);
+      const result = ideas[randomIndex].replace("SKILL", skill);
+      document.getElementById("idea").innerText = result;
+    }
+  </script>
+
 </body>
 </html>
