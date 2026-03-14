@@ -63,7 +63,7 @@ margin-top:20px;
 <br>
 
 <button onclick="generateIdea()">Generate Idea</button>
-
+<button onclick="shareTool()">Share this tool</button>
 <p id="idea"></p>
 
 <div class="money">
@@ -76,7 +76,10 @@ margin-top:20px;
 </div>
 
 </div>
-
+function shareTool(){
+navigator.clipboard.writeText(window.location.href);
+alert("Link copied! Share it with friends.");
+}
 <script>
 
 const ideas = [
