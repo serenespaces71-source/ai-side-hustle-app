@@ -1,62 +1,118 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Side Hustle Generator</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 50px;
-    }
-    h1 {
-      color: #333;
-    }
-    input, button {
-      padding: 10px;
-      margin: 5px 0;
-      font-size: 16px;
-    }
-    #idea {
-      margin-top: 20px;
-      font-weight: bold;
-      color: #0066cc;
-    }
-  </style>
+<title>AI Side Hustle Generator</title>
+
+<style>
+body{
+font-family:Arial;
+text-align:center;
+background:linear-gradient(135deg,#667eea,#764ba2);
+color:white;
+padding:40px;
+}
+
+.container{
+background:white;
+color:black;
+padding:30px;
+border-radius:10px;
+max-width:400px;
+margin:auto;
+}
+
+input{
+padding:10px;
+width:80%;
+margin:10px;
+}
+
+button{
+padding:10px 20px;
+background:#667eea;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#4c5bd4;
+}
+
+#idea{
+margin-top:20px;
+font-weight:bold;
+}
+
+.money{
+margin-top:20px;
+}
+</style>
 </head>
+
 <body>
 
-  <h1>AI Side Hustle Generator</h1>
-  <p>Type a skill or interest to get a side hustle idea:</p>
-  <input type="text" id="skill" placeholder="e.g., fitness, writing, coding">
-  <button onclick="generateIdea()">Generate Idea</button>
+<h1>AI Side Hustle Generator</h1>
+<p>Type a skill and get a business idea instantly.</p>
 
-  <div id="idea"></div>
+<div class="container">
 
-  <script>
-    const ideas = [
-      "Start a coaching service for SKILL",
-      "Create an online course about SKILL",
-      "Write an eBook about SKILL",
-      "Build a YouTube channel teaching SKILL",
-      "Offer consulting services in SKILL"
-    ];
+<input id="skill" placeholder="Example: fitness, cooking, writing">
 
-    function generateIdea() {
-      const skill = document.getElementById("skill").value.trim();
-      if (!skill) {
-        document.getElementById("idea").innerText = "Please enter a skill first!";
-        return;
-      }
-      const randomIndex = Math.floor(Math.random() * ideas.length);
-      const result = ideas[randomIndex].replace("SKILL", skill);
-      document.getElementById("idea").innerText = result;
-    }
-  </script>
+<br>
+
+<button onclick="generateIdea()">Generate Idea</button>
+
+<p id="idea"></p>
+
+<div class="money">
+<p>Want 100 side hustle ideas?</p>
+
+<a href="https://beacons.ai/" target="_blank">
+<button>Get More Ideas</button>
+</a>
+
+</div>
+
+</div>
+
+<script>
+
+const ideas = [
+"Start a YouTube channel teaching SKILL",
+"Sell a digital guide about SKILL",
+"Offer freelance services for SKILL",
+"Start an Instagram page about SKILL",
+"Create an online course about SKILL",
+"Start a coaching business for SKILL",
+"Write an ebook about SKILL",
+"Create templates related to SKILL",
+"Start a blog about SKILL",
+"Sell printable planners about SKILL",
+"Offer consulting services in SKILL",
+"Start a podcast discussing SKILL",
+"Sell beginner tutorials about SKILL",
+"Create social media content teaching SKILL"
+];
+
+function generateIdea(){
+
+let skill = document.getElementById("skill").value;
+
+if(skill===""){
+document.getElementById("idea").innerHTML="Please enter a skill.";
+return;
+}
+
+let randomIdea = ideas[Math.floor(Math.random()*ideas.length)];
+
+document.getElementById("idea").innerHTML = randomIdea.replace("SKILL",skill);
+
+}
+
+</script>
 
 </body>
-</html>
+  </html>
+      
